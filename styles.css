@@ -85,6 +85,25 @@ header nav ul li a:hover {
   margin: 1rem auto;
   padding: 0 20px;
 }
+.hero .hero-text .cta-button {
+  display: inline-block;
+  margin-bottom: 2rem; /* Add margin below the button */
+  padding: 0.75rem 2rem;
+  color: #29e6df;
+  border: 2px solid #29e6df;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 30px;
+  background-color: transparent; /* No background color */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Added color transition */
+}
+.hero .hero-text .cta-button:hover {
+  background-color: #29e6df; /* Blue background on hover */
+  color: #ffffff; /* White text on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
 .hero .social-links {
   display: flex;
   justify-content: center;
@@ -95,7 +114,7 @@ header nav ul li a:hover {
   margin: 0 20px;
   color: #29e6df;
   font-size: 2.5rem;
-  transition: color 0.3s, transform 0.3s; /* Added transform transition */
+  transition: color 0.3s, transform 0.3s;
   text-decoration: none;
 }
 .hero .social-links .social-icon i {
@@ -103,7 +122,7 @@ header nav ul li a:hover {
 }
 .hero .social-links .social-icon:hover {
   color: #57ebe6;
-  transform: scale(1.2); /* Scale effect on hover */
+  transform: scale(1.2);
 }
 
 section {
