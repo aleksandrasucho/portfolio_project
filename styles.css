@@ -47,6 +47,10 @@ header nav ul li a:hover {
   background-repeat: no-repeat;
   overflow: hidden;
 }
+.hero .heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700; /* Ensure the bold version is used */
+}
 .hero .hero-text {
   position: relative;
   max-width: 90%;

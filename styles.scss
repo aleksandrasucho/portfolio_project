@@ -59,6 +59,11 @@ header {
     background-repeat: no-repeat;
     overflow: hidden;
 
+    .heading {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700; /* Ensure the bold version is used */
+    }
+
     .hero-text {
         position: relative;
         max-width: 90%;
