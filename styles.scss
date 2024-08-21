@@ -58,19 +58,21 @@ header {
     background-repeat: no-repeat;
     overflow: hidden;
 
-    #typewriter {
-        $accent-color: #29e6df;
-    }
-
     .hero-text {
         position: relative;
-        max-width: 600px;
+        max-width: 90%; // Ensures enough width for larger text
         margin: 0 auto;
+        padding: 0 20px; // Add padding to avoid clipping
+        box-sizing: border-box; // Include padding in width
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            position: relative;
+            font-size: 3vw; // Responsive font size
+            margin-bottom: 0.5rem; // Space below heading
+            line-height: 1.1; // Adjust line height for readability
+            white-space: nowrap; // Prevent wrapping
+            overflow: hidden; // Hide overflow
+            text-overflow: ellipsis; // Optional: ellipsis if text overflows
+            color: $primary-color; // Heading color
         }
 
         .text.sec-text {
@@ -79,18 +81,20 @@ header {
             white-space: nowrap;
             overflow: hidden;
             color: $accent-color;
-            border-right: 4px solid $accent-color; /* Cursor */
+            border-right: 4px solid $accent-color; // Cursor
             animation: blink-caret 500ms step-end infinite;
         }
 
-        @keyframes blink-caret {
-            50% {
-                border-color: transparent;
-            }
-        }
-
         p {
-            font-size: 1.2rem;
+            font-size: 1.5rem; // Adjust font size
+            line-height: 1.6; // Adjust line height
+            margin: 0; // Remove default margin
+            word-wrap: break-word; // Ensure long words wrap
+            white-space: normal; // Allow normal wrapping
+            color: #d3d3d3; // Subtle text color for paragraph
+            max-width: 700px; // Limit width for better readability
+            margin: 0 auto; // Center paragraph
+            padding: 0 20px; // Add padding
         }
     }
 }
@@ -139,7 +143,7 @@ section {
             }
 
             p {
-                padding: 0 10px 10px;
+                font-size: 1.2rem; // Adjust as needed
             }
         }
     }
