@@ -95,7 +95,7 @@ header nav ul li a:hover {
   margin: 0 20px;
   color: #29e6df;
   font-size: 2.5rem;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s; /* Added transform transition */
   text-decoration: none;
 }
 .hero .social-links .social-icon i {
@@ -103,6 +103,7 @@ header nav ul li a:hover {
 }
 .hero .social-links .social-icon:hover {
   color: #57ebe6;
+  transform: scale(1.2); /* Scale effect on hover */
 }
 
 section {
