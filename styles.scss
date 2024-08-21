@@ -48,6 +48,7 @@ header {
 
 .hero {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -60,19 +61,19 @@ header {
 
     .hero-text {
         position: relative;
-        max-width: 90%; // Ensures enough width for larger text
+        max-width: 90%;
         margin: 0 auto;
-        padding: 0 20px; // Add padding to avoid clipping
-        box-sizing: border-box; // Include padding in width
+        padding: 0 20px;
+        box-sizing: border-box;
 
         h1 {
-            font-size: 3vw; // Responsive font size
-            margin-bottom: 0.5rem; // Space below heading
-            line-height: 1.1; // Adjust line height for readability
-            white-space: nowrap; // Prevent wrapping
-            overflow: hidden; // Hide overflow
-            text-overflow: ellipsis; // Optional: ellipsis if text overflows
-            color: $primary-color; // Heading color
+            font-size: 3vw;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: $primary-color;
         }
 
         .text.sec-text {
@@ -81,20 +82,41 @@ header {
             white-space: nowrap;
             overflow: hidden;
             color: $accent-color;
-            border-right: 4px solid $accent-color; // Cursor
+            border-right: 4px solid $accent-color;
             animation: blink-caret 500ms step-end infinite;
         }
 
         p {
-            font-size: 1.5rem; // Adjust font size
-            line-height: 1.6; // Adjust line height
-            margin: 0; // Remove default margin
-            word-wrap: break-word; // Ensure long words wrap
-            white-space: normal; // Allow normal wrapping
-            color: #d3d3d3; // Subtle text color for paragraph
-            max-width: 700px; // Limit width for better readability
-            margin: 0 auto; // Center paragraph
-            padding: 0 20px; // Add padding
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin: 1rem 0;
+            color: #d3d3d3;
+            max-width: 700px;
+            margin: 1rem auto;
+            padding: 0 20px;
+        }
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+
+        .social-icon {
+            display: inline-block;
+            margin: 0 20px;
+            color: $accent-color;
+            font-size: 2.5rem;
+            transition: color 0.3s;
+            text-decoration: none;
+
+            i {
+                font-size: inherit;
+            }
+
+            &:hover {
+                color: lighten($accent-color, 10%);
+            }
         }
     }
 }
@@ -143,7 +165,7 @@ section {
             }
 
             p {
-                font-size: 1.2rem; // Adjust as needed
+                font-size: 1.5rem; // Adjust as needed
             }
         }
     }
