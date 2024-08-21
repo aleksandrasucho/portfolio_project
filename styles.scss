@@ -52,7 +52,10 @@ header {
     align-items: center;
     height: 100vh;
     text-align: center;
-    background-color: $background-color;
+    background-image: url('images/dark-background.PNG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
 
     #typewriter {

@@ -1,5 +1,5 @@
 const textElement = document.getElementById('typewriter');
-const initialText = "Aleksandra Suchjad.";
+const initialText = "Aleksandra Suchojad.";
 const texts = [
     "a Web Developer.",
     "a Game Developer.",
@@ -10,7 +10,7 @@ let charIndex = 0;
 let isDeleting = false;
 const typingSpeed = 100;
 const deletingSpeed = 50;
-const pauseBetweenTexts = 2000;
+const pauseBetweenTexts = 1000;
 const initialPause = 3000;
 
 const typewriterEffect = () => {

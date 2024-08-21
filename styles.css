@@ -40,7 +40,10 @@ header nav ul li a:hover {
   align-items: center;
   height: 100vh;
   text-align: center;
-  background-color: #2b2e2d;
+  background-image: url("images/dark-background.PNG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 .hero .hero-text {
