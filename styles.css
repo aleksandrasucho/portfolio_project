@@ -1,0 +1,160 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-color: #2b2e2d;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(43, 46, 45, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  list-style: none;
+  margin: 0;
+}
+header nav ul li {
+  margin: 0 15px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+header nav ul li a:hover {
+  color: #29e6df;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #2b2e2d;
+  overflow: hidden;
+}
+.hero .hero-text {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.hero .hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.hero .hero-text .text.sec-text {
+  display: inline;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #29e6df;
+  border-right: 4px solid #29e6df; /* Cursor */
+  animation: blink-caret 500ms step-end infinite;
+}
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+.hero .hero-text p {
+  font-size: 1.2rem;
+}
+
+section {
+  padding: 60px 20px;
+}
+section .section-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+section .section-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+section .section-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+section .project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+section .project-grid .project-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+section .project-grid .project-item img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+section .project-grid .project-item h3 {
+  margin: 10px 0;
+}
+section .project-grid .project-item p {
+  padding: 0 10px 10px;
+}
+section form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+section form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+section form input, section form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+section form button {
+  background: #29e6df;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+section form button:hover {
+  background: #17c5bf;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+footer p {
+  margin: 0;
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
