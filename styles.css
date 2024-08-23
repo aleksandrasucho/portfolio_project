@@ -10,28 +10,80 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(43, 46, 45, 0.9);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
-header nav ul {
+header .hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
   display: flex;
-  justify-content: center;
-  padding: 10px 0;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1100;
+}
+header .hamburger span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+header .hamburger span:nth-child(1) {
+  background-color: #ffffff;
+}
+header .hamburger span:nth-child(2) {
+  background-color: #ffffff;
+}
+header .hamburger span:nth-child(3) {
+  background-color: #ffffff;
+}
+header .hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+header .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+header .hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+}
+header .sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: transparent;
+  padding: 60px 20px;
+  transition: left 0.3s ease;
+  z-index: 1050;
+}
+header .sidebar ul {
   list-style: none;
+  padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-header nav ul li {
-  margin: 0 15px;
+header .sidebar ul li {
+  margin: 20px 0;
 }
-header nav ul li a {
+header .sidebar ul li a {
   text-decoration: none;
   color: #ffffff;
+  font-size: 1.5rem;
   font-weight: bold;
   transition: color 0.3s;
 }
-header nav ul li a:hover {
-  color: #29e6df;
+header .sidebar ul li a:hover {
+  color: white;
+}
+header .sidebar.active {
+  left: 0;
 }
 
 .hero {
@@ -49,7 +101,7 @@ header nav ul li a:hover {
 }
 .hero .heading {
   font-family: "Poppins", sans-serif;
-  font-weight: 700; /* Ensure the bold version is used */
+  font-weight: 700;
 }
 .hero .hero-text {
   position: relative;
@@ -87,7 +139,7 @@ header nav ul li a:hover {
 }
 .hero .hero-text .cta-button {
   display: inline-block;
-  margin-bottom: 2rem; /* Add margin below the button */
+  margin-bottom: 2rem;
   padding: 0.75rem 2rem;
   color: #29e6df;
   border: 2px solid #29e6df;
@@ -96,13 +148,13 @@ header nav ul li a:hover {
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 30px;
-  background-color: transparent; /* No background color */
-  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Added color transition */
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 .hero .hero-text .cta-button:hover {
-  background-color: #29e6df; /* Blue background on hover */
-  color: #ffffff; /* White text on hover */
-  transform: scale(1.05); /* Slightly increase size on hover */
+  background-color: #29e6df;
+  color: #ffffff;
+  transform: scale(1.05);
 }
 .hero .social-links {
   display: flex;

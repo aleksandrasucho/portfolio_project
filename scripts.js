@@ -61,3 +61,9 @@ setTimeout(() => {
     textElement.classList.add('type');
     setTimeout(typewriterEffect, initialPause);
 }, initialPause);
+
+
+document.querySelector('.hamburger').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.sidebar').classList.toggle('active');
+});
