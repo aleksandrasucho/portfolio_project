@@ -96,7 +96,8 @@ header {
                     transition: color 0.3s;
 
                     &:hover {
-                        color: lighten($primary-color, 20%);
+                        color: $accent-color;
+                        transform: scale(1.05);
                     }
                 }
             }
@@ -212,6 +213,7 @@ header {
 
 section {
     padding: 60px 20px;
+    background-color: #141816;
 
     .section-content {
         max-width: 800px;
@@ -292,6 +294,42 @@ section {
         }
     }
 }
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 0;
+
+    .about-photo {
+        flex: 1;
+        max-width: 300px;
+        img {
+            width: 100%;
+            border-radius: 50%; // Optional: Makes the photo circular
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .about-text {
+        flex: 2;
+        max-width: 600px;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #d3d3d3;
+        }
+    }
+}
+
 
 footer {
     background: #333;

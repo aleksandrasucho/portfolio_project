@@ -80,7 +80,8 @@ header .sidebar ul li a {
   transition: color 0.3s;
 }
 header .sidebar ul li a:hover {
-  color: white;
+  color: #29e6df;
+  transform: scale(1.05);
 }
 header .sidebar.active {
   left: 0;
@@ -179,6 +180,7 @@ header .sidebar.active {
 
 section {
   padding: 60px 20px;
+  background-color: #141816;
 }
 section .section-content {
   max-width: 800px;
@@ -245,6 +247,37 @@ section form button {
 }
 section form button:hover {
   background: #17c5bf;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 0;
+}
+.about-content .about-photo {
+  flex: 1;
+  max-width: 300px;
+}
+.about-content .about-photo img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.about-content .about-text {
+  flex: 2;
+  max-width: 600px;
+}
+.about-content .about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.about-content .about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #d3d3d3;
 }
 
 footer {
