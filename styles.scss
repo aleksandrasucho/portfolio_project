@@ -330,6 +330,55 @@ section {
     }
 }
 
+/* Styles for the Skills and Approach section */
+.skills-approach {
+    margin-top: 20px;
+}
+
+.skills-approach h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Flex container for horizontal layout */
+.skill-container {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly with space between */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 20px; /* Spacing between items */
+}
+
+.skill-item {
+    flex: 1 1 calc(25% - 20px); /* Flex-grow, flex-shrink, and base width */
+    min-width: 220px; /* Minimum width to ensure proper layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd; /* Optional: border for better visual separation */
+    border-radius: 8px; /* Optional: rounded corners */
+    background-color: #f9f9f9; /* Optional: background color */
+    box-sizing: border-box; /* Ensure padding and border are included in total width */
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skill-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.skill-item p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+
 
 footer {
     background: #333;
