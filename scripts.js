@@ -1,3 +1,4 @@
+// Typewriter Effect Code (Unchanged)
 const textElement = document.getElementById('typewriter');
 const initialText = "Aleksandra Suchojad.";
 const texts = [
@@ -21,31 +22,27 @@ const typewriterEffect = () => {
         charIndex++;
 
         if (charIndex > currentText.length) {
-            // Pause after full text is typed
             isDeleting = true;
             setTimeout(typewriterEffect, pauseBetweenTexts);
         } else {
             setTimeout(typewriterEffect, typingSpeed);
         }
     } else {
-        // Deleting effect for the texts
         textElement.textContent = currentText.substring(0, charIndex);
         charIndex--;
 
         if (charIndex < 0) {
-            // Move to the next text
             isDeleting = false;
             textIndex = (textIndex + 1) % texts.length;
 
             if (textIndex === 0) {
-                // Reset and type out "Aleksandra Suchjad" again
                 textElement.classList.add('erase');
                 setTimeout(() => {
                     textElement.textContent = initialText;
                     textElement.classList.remove('erase');
                     charIndex = 0;
                     setTimeout(typewriterEffect, initialPause);
-                }, 2000); // Time for type-out animation
+                }, 2000);
             } else {
                 setTimeout(typewriterEffect, pauseBetweenTexts);
             }
@@ -55,15 +52,23 @@ const typewriterEffect = () => {
     }
 };
 
-// Start the typewriter effect after an initial delay
-textElement.textContent = initialText;
-setTimeout(() => {
-    textElement.classList.add('type');
-    setTimeout(typewriterEffect, initialPause);
-}, initialPause);
+if (textElement) {
+    textElement.textContent = initialText;
+    setTimeout(() => {
+        textElement.classList.add('type');
+        setTimeout(typewriterEffect, initialPause);
+    }, initialPause);
+}
 
+// Hamburger Menu Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const sidebar = document.querySelector('.sidebar');
 
-document.querySelector('.hamburger').addEventListener('click', function() {
-    this.classList.toggle('active');
-    document.querySelector('.sidebar').classList.toggle('active');
+    if (hamburger && sidebar) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        });
+    }
 });
