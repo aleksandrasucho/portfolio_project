@@ -3,6 +3,8 @@ $text-color: #ffffff;
 $primary-color: #ffffff;
 $accent-color: #29e6df;
 $background-color: #2b2e2d;
+$skill-background-color: #3a3f3b; // New color for skill items
+$skill-hover-background-color: #4b5451; // Hover color for skill items
 $font-family: 'Montserrat', sans-serif;
 
 // Global Styles
@@ -10,7 +12,7 @@ body {
     font-family: $font-family;
     margin: 0;
     padding: 0;
-    color: $primary-color;
+    color: $text-color;
     background-color: $background-color;
 }
 
@@ -72,7 +74,7 @@ header {
         left: -250px; // Initially hidden offscreen
         width: 250px;
         height: 100%;
-        background: transparent; // Fully transparent
+        background: $background-color;
         padding: 60px 20px;
         transition: left 0.3s ease;
         z-index: 1050;
@@ -214,9 +216,11 @@ header {
 section {
     padding: 60px 20px;
     background-color: #141816;
+    width: 100%;
+    box-sizing: border-box;
 
     .section-content {
-        max-width: 800px;
+        max-width: 1200px; // Increase max-width to use more of the available width
         margin: 0 auto;
         text-align: center;
 
@@ -301,84 +305,101 @@ section {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 40px 0;
+    padding: 40px 20px;
+    opacity: 0; // Start with hidden opacity for animation
+    transform: translateY(20px); // Start with a slight offset
+    animation: fadeInUp 1s ease-out forwards; // Apply fade-in animation
 
     .about-photo {
-        flex: 1;
-        max-width: 300px;
+        flex: 1 1 45%; // Adjust to make image slightly larger
+        max-width: 500px; // Increase max-width for larger image
         img {
             width: 100%;
             border-radius: 50%; // Optional: Makes the photo circular
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05); // Slightly larger image
+            transition: transform 0.3s ease;
+            
+            &:hover {
+                transform: scale(1.1); // Enlarge image on hover
+            }
         }
     }
 
     .about-text {
-        flex: 2;
-        max-width: 600px;
+        flex: 1 1 50%; // Adjust to take up more space
+        max-width: 800px;
 
         h2 {
-            font-size: 2rem;
+            font-size: 2.5rem; // Increased font size
             margin-bottom: 1rem;
+            color: $primary-color;
         }
 
         p {
             font-size: 1.1rem;
             line-height: 1.6;
-            color: #d3d3d3;
+            color: #ccc;
         }
     }
 }
 
-/* Styles for the Skills and Approach section */
 .skills-approach {
-    margin-top: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+
+    h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: $primary-color;
+    }
+
+    .skill-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .skill-item {
+        flex: 1 1 calc(33.333% - 20px);
+        min-width: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: $skill-background-color; // Set background color
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+        &:hover {
+            background-color: $skill-hover-background-color; // Change background on hover
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-icon {
+            font-size: 60px; // Increased size of icons
+            color: $accent-color;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: $primary-color;
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 0;
+            color: #ccc;
+        }
+    }
 }
-
-.skills-approach h3 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-/* Flex container for horizontal layout */
-.skill-container {
-    display: flex;
-    justify-content: space-between; /* Distribute items evenly with space between */
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    gap: 20px; /* Spacing between items */
-}
-
-.skill-item {
-    flex: 1 1 calc(25% - 20px); /* Flex-grow, flex-shrink, and base width */
-    min-width: 220px; /* Minimum width to ensure proper layout */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px;
-    border: 1px solid #ddd; /* Optional: border for better visual separation */
-    border-radius: 8px; /* Optional: rounded corners */
-    background-color: #f9f9f9; /* Optional: background color */
-    box-sizing: border-box; /* Ensure padding and border are included in total width */
-}
-
-.skill-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-.skill-item h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.skill-item p {
-    font-size: 1rem;
-    margin: 0;
-}
-
-
 
 footer {
     background: #333;
@@ -394,4 +415,15 @@ footer {
 // Keyframes for blinking caret
 @keyframes blink-caret {
     50% { border-color: transparent; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
