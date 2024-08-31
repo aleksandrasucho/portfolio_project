@@ -72,3 +72,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Smooth Scroll for "Explore My Work" Button
+document.addEventListener('DOMContentLoaded', function() {
+    const ctaButton = document.querySelector('.cta-button');
+    const aboutSection = document.querySelector('#about');
+
+    if (ctaButton && aboutSection) {
+        ctaButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            aboutSection.scrollIntoView({
+                behavior: 'smooth', // Smooth scroll
+                block: 'start' // Scroll to the top of the section
+            });
+        });
+    }
+});
+

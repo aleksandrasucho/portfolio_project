@@ -8,6 +8,11 @@ $skill-hover-background-color: #4b5451; // Hover color for skill items
 $font-family: 'Montserrat', sans-serif;
 
 // Global Styles
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: $font-family;
     margin: 0;
@@ -74,7 +79,7 @@ header {
         left: -250px; // Initially hidden offscreen
         width: 250px;
         height: 100%;
-        background: $background-color;
+
         padding: 60px 20px;
         transition: left 0.3s ease;
         z-index: 1050;
