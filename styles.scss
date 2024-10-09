@@ -3,12 +3,11 @@ $text-color: #ffffff;
 $primary-color: #ffffff;
 $accent-color: #29e6df;
 $background-color: #2b2e2d;
-$skill-background-color: #3a3f3b; // New color for skill items
-$skill-hover-background-color: #4b5451; // Hover color for skill items
 $font-family: 'Montserrat', sans-serif;
+$cursive-font: 'Dancing Script', cursive; // Cursive font for your name
+$header-font: 'Lobster', cursive; // New stylish font for your name
 
 // Global Styles
-
 html {
     scroll-behavior: smooth;
 }
@@ -21,98 +20,55 @@ body {
     background-color: $background-color;
 }
 
+// Header Styles
 header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5); // Semi-transparent background
+    backdrop-filter: blur(5px); // Optional: blur effect behind the navbar
 
-    .hamburger {
-        position: fixed;
-        top: 20px;
-        left: 20px;
+    .navbar {
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        width: 30px;
-        height: 22px;
-        cursor: pointer;
-        z-index: 1100;
+        align-items: center;
+        padding: 5px 20px; // Thinner navbar
 
-        span {
-            display: block;
-            width: 30px;
-            height: 4px;
-            background-color: $primary-color;
-            border-radius: 2px;
-            transition: all 0.3s;
+        .navbar-left h1 {
+            color: $primary-color; // Text color
+            font-family: $header-font; // Updated font for your name
+            font-size: 2rem; // Adjust font size for better visibility
+            font-weight: normal; // Set to regular font weight
         }
 
-        span:nth-child(1) {
-            background-color: $primary-color;
+        .navbar-middle .cool-thing {
+            font-size: 40px; // Smaller emoji size (adjusted)
+            color: $primary-color; // Emoji color
         }
 
-        span:nth-child(2) {
-            background-color: $primary-color;
-        }
-
-        span:nth-child(3) {
-            background-color: $primary-color;
-        }
-
-        &.active {
-            span:nth-child(1) {
-                transform: rotate(45deg) translateY(9px);
-            }
-            span:nth-child(2) {
-                opacity: 0;
-            }
-            span:nth-child(3) {
-                transform: rotate(-45deg) translateY(-9px);
-            }
-        }
-    }
-
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: -250px; // Initially hidden offscreen
-        width: 250px;
-        height: 100%;
-
-        padding: 60px 20px;
-        transition: left 0.3s ease;
-        z-index: 1050;
-        
-        ul {
+        .navbar-right ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
 
             li {
-                margin: 20px 0;
+                margin: 0 15px;
 
                 a {
                     text-decoration: none;
-                    color: $primary-color;
-                    font-size: 1.5rem;
+                    color: $primary-color; // Link color
                     font-weight: bold;
+                    font-size: 1.2rem; // Increased font size for links
                     transition: color 0.3s;
 
                     &:hover {
-                        color: $accent-color;
-                        transform: scale(1.05);
+                        color: $accent-color; // Change color on hover
                     }
                 }
             }
         }
-    }
-
-    .sidebar.active {
-        left: 0; // Slide in the sidebar
     }
 }
 
@@ -374,61 +330,41 @@ section {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
         border-radius: 8px;
-        background-color: $skill-background-color; // Set background color
-        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        
-        &:hover {
-            background-color: $skill-hover-background-color; // Change background on hover
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+        transition: background 0.3s;
 
-        .skill-icon {
-            font-size: 60px; // Increased size of icons
-            color: $accent-color;
-            margin-bottom: 15px;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         h4 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: $primary-color;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: $accent-color;
         }
 
         p {
             font-size: 1rem;
-            margin: 0;
             color: #ccc;
         }
     }
 }
 
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-
-    p {
-        margin: 0;
-    }
-}
-
-// Keyframes for blinking caret
-@keyframes blink-caret {
-    50% { border-color: transparent; }
-}
-
+// Keyframe Animations
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: $accent-color;
     }
 }

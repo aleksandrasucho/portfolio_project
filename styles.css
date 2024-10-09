@@ -15,79 +15,43 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
 }
-header .hamburger {
-  position: fixed;
-  top: 20px;
-  left: 20px;
+header .navbar {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  z-index: 1100;
+  align-items: center;
+  padding: 5px 20px;
 }
-header .hamburger span {
-  display: block;
-  width: 30px;
-  height: 4px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: all 0.3s;
+header .navbar .navbar-left h1 {
+  color: #ffffff;
+  font-family: "Lobster", cursive;
+  font-size: 2rem;
+  font-weight: normal;
 }
-header .hamburger span:nth-child(1) {
-  background-color: #ffffff;
+header .navbar .navbar-middle .cool-thing {
+  font-size: 40px;
+  color: #ffffff;
 }
-header .hamburger span:nth-child(2) {
-  background-color: #ffffff;
-}
-header .hamburger span:nth-child(3) {
-  background-color: #ffffff;
-}
-header .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(9px);
-}
-header .hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-header .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-9px);
-}
-header .sidebar {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  padding: 60px 20px;
-  transition: left 0.3s ease;
-  z-index: 1050;
-}
-header .sidebar ul {
+header .navbar .navbar-right ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-header .sidebar ul li {
-  margin: 20px 0;
+header .navbar .navbar-right ul li {
+  margin: 0 15px;
 }
-header .sidebar ul li a {
+header .navbar .navbar-right ul li a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 1.5rem;
   font-weight: bold;
+  font-size: 1.2rem;
   transition: color 0.3s;
 }
-header .sidebar ul li a:hover {
+header .navbar .navbar-right ul li a:hover {
   color: #29e6df;
-  transform: scale(1.05);
-}
-header .sidebar.active {
-  left: 0;
 }
 
 .hero {
@@ -317,56 +281,36 @@ section form button:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #3a3f3b;
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
 }
 .skills-approach .skill-item:hover {
-  background-color: #4b5451;
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-.skills-approach .skill-item .skill-icon {
-  font-size: 60px;
-  color: #29e6df;
-  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .skills-approach .skill-item h4 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #29e6df;
 }
 .skills-approach .skill-item p {
   font-size: 1rem;
-  margin: 0;
   color: #ccc;
 }
 
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-}
-footer p {
-  margin: 0;
-}
-
-@keyframes blink-caret {
-  50% {
-    border-color: transparent;
-  }
-}
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #29e6df;
   }
 }
 
