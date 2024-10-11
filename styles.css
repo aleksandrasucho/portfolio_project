@@ -13,10 +13,16 @@ body {
 header {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  transition: backdrop-filter 0.3s ease;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+}
+header h1, header h2, header h3, header p {
+  color: #333;
 }
 header .navbar {
   display: flex;
@@ -26,13 +32,9 @@ header .navbar {
 }
 header .navbar .navbar-left h1 {
   color: #ffffff;
-  font-family: "Lobster", cursive;
-  font-size: 2rem;
+  font-family: "Cinzel", serif;
+  font-size: 1.5rem;
   font-weight: normal;
-}
-header .navbar .navbar-middle .cool-thing {
-  font-size: 40px;
-  color: #ffffff;
 }
 header .navbar .navbar-right ul {
   list-style: none;
@@ -46,12 +48,12 @@ header .navbar .navbar-right ul li {
 header .navbar .navbar-right ul li a {
   text-decoration: none;
   color: #ffffff;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-family: "Cinzel", serif;
+  font-size: 1.5rem;
   transition: color 0.3s;
 }
 header .navbar .navbar-right ul li a:hover {
-  color: #29e6df;
+  color: #2b2e2d;
 }
 
 .hero {
@@ -61,7 +63,7 @@ header .navbar .navbar-right ul li a:hover {
   align-items: center;
   height: 100vh;
   text-align: center;
-  background-image: url("images/dark-background.PNG");
+  background-image: url("images/pexels-alscre-2847648.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -92,16 +94,16 @@ header .navbar .navbar-right ul li a:hover {
   position: relative;
   white-space: nowrap;
   overflow: hidden;
-  color: #29e6df;
-  border-right: 4px solid #29e6df;
+  color: #2b2e2d;
+  border-right: 4px solid #2b2e2d;
   animation: blink-caret 500ms step-end infinite;
 }
 .hero .hero-text p {
   font-size: 1.5rem;
   line-height: 1.6;
   margin: 1rem 0;
-  color: #d3d3d3;
-  max-width: 700px;
+  color: #2b2e2d;
+  max-width: 900px;
   margin: 1rem auto;
   padding: 0 20px;
 }
@@ -109,9 +111,9 @@ header .navbar .navbar-right ul li a:hover {
   display: inline-block;
   margin-bottom: 2rem;
   padding: 0.75rem 2rem;
-  color: #29e6df;
-  border: 2px solid #29e6df;
-  font-size: 1.2rem;
+  color: #2b2e2d;
+  border: 2px solid #2b2e2d;
+  font-size: 1.4rem;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
@@ -120,7 +122,7 @@ header .navbar .navbar-right ul li a:hover {
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 .hero .hero-text .cta-button:hover {
-  background-color: #29e6df;
+  background-color: #2b2e2d;
   color: #ffffff;
   transform: scale(1.05);
 }
@@ -132,7 +134,7 @@ header .navbar .navbar-right ul li a:hover {
 .hero .social-links .social-icon {
   display: inline-block;
   margin: 0 20px;
-  color: #29e6df;
+  color: #2b2e2d;
   font-size: 2.5rem;
   transition: color 0.3s, transform 0.3s;
   text-decoration: none;
@@ -141,13 +143,13 @@ header .navbar .navbar-right ul li a:hover {
   font-size: inherit;
 }
 .hero .social-links .social-icon:hover {
-  color: #57ebe6;
+  color: #444847;
   transform: scale(1.2);
 }
 
 section {
   padding: 60px 20px;
-  background-color: #141816;
+  background-color: #fff6e5;
   width: 100%;
   box-sizing: border-box;
 }
@@ -205,7 +207,7 @@ section form input, section form textarea {
   border-radius: 4px;
 }
 section form button {
-  background: #29e6df;
+  background: #2b2e2d;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -215,7 +217,7 @@ section form button {
   transition: background 0.3s;
 }
 section form button:hover {
-  background: #17c5bf;
+  background: #121413;
 }
 
 .about-content {
@@ -292,7 +294,7 @@ section form button:hover {
 .skills-approach .skill-item h4 {
   font-size: 1.5rem;
   margin-bottom: 5px;
-  color: #29e6df;
+  color: #2b2e2d;
 }
 .skills-approach .skill-item p {
   font-size: 1rem;
@@ -310,7 +312,7 @@ section form button:hover {
     border-color: transparent;
   }
   50% {
-    border-color: #29e6df;
+    border-color: #2b2e2d;
   }
 }
 

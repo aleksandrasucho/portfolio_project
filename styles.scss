@@ -1,11 +1,11 @@
 // Variables
 $text-color: #ffffff;
 $primary-color: #ffffff;
-$accent-color: #29e6df;
+$accent-color: #2b2e2d;
 $background-color: #2b2e2d;
 $font-family: 'Montserrat', sans-serif;
-$cursive-font: 'Dancing Script', cursive; // Cursive font for your name
-$header-font: 'Lobster', cursive; // New stylish font for your name
+$header-font: "Cinzel", serif;
+
 
 // Global Styles
 html {
@@ -22,12 +22,22 @@ body {
 
 // Header Styles
 header {
-    position: fixed;
+    position: fixed; // Keeps the header fixed at the top
     top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5); // Semi-transparent background
-    backdrop-filter: blur(5px); // Optional: blur effect behind the navbar
+    left: 0;
+    right: 0;
+    height: 60px; // Adjust the height as needed
+    background-color: transparent; // Make background transparent
+    backdrop-filter: blur(10px); // Adjust the blur radius as needed
+    transition: backdrop-filter 0.3s ease; // Smooth transition for the blur effect
+    z-index: 1000; // Ensure header is on top of other elements
+
+    // Optional: Style for text in the header
+    h1, h2, h3, p {
+        color: #333; // Adjust text color for better visibility against the blurred background
+    }
+    
+    
 
     .navbar {
         display: flex;
@@ -38,13 +48,8 @@ header {
         .navbar-left h1 {
             color: $primary-color; // Text color
             font-family: $header-font; // Updated font for your name
-            font-size: 2rem; // Adjust font size for better visibility
+            font-size: 1.5rem; // Adjust font size for better visibility
             font-weight: normal; // Set to regular font weight
-        }
-
-        .navbar-middle .cool-thing {
-            font-size: 40px; // Smaller emoji size (adjusted)
-            color: $primary-color; // Emoji color
         }
 
         .navbar-right ul {
@@ -59,8 +64,8 @@ header {
                 a {
                     text-decoration: none;
                     color: $primary-color; // Link color
-                    font-weight: bold;
-                    font-size: 1.2rem; // Increased font size for links
+                    font-family: "Cinzel", serif;
+                    font-size: 1.5rem; // Increased font size for links
                     transition: color 0.3s;
 
                     &:hover {
@@ -79,11 +84,12 @@ header {
     align-items: center;
     height: 100vh;
     text-align: center;
-    background-image: url('images/dark-background.PNG');
+    background-image: url('images/pexels-alscre-2847648.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+    
 
     .heading {
         font-family: 'Poppins', sans-serif;
@@ -121,8 +127,8 @@ header {
             font-size: 1.5rem;
             line-height: 1.6;
             margin: 1rem 0;
-            color: #d3d3d3;
-            max-width: 700px;
+            color: $accent-color;
+            max-width: 900px;
             margin: 1rem auto;
             padding: 0 20px;
         }
@@ -133,7 +139,7 @@ header {
             padding: 0.75rem 2rem;
             color: $accent-color;
             border: 2px solid $accent-color;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
@@ -176,7 +182,7 @@ header {
 
 section {
     padding: 60px 20px;
-    background-color: #141816;
+    background-color: #fff6e5;
     width: 100%;
     box-sizing: border-box;
 
