@@ -15,45 +15,67 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 70px;
   background-color: transparent;
   backdrop-filter: blur(10px);
   transition: backdrop-filter 0.3s ease;
   z-index: 1000;
-}
-header h1, header h2, header h3, header p {
-  color: #333;
+  border-bottom: 2px solid #2b2e2d;
 }
 header .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 20px;
+  height: 100%;
+}
+header .navbar .navbar-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 header .navbar .navbar-left h1 {
-  color: #ffffff;
-  font-family: "Cinzel", serif;
-  font-size: 1.5rem;
-  font-weight: normal;
+  color: #2b2e2d;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  margin: 0;
+  overflow: hidden;
 }
 header .navbar .navbar-right ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
+  align-items: center;
+  height: 100%;
 }
 header .navbar .navbar-right ul li {
   margin: 0 15px;
 }
 header .navbar .navbar-right ul li a {
   text-decoration: none;
-  color: #ffffff;
-  font-family: "Cinzel", serif;
-  font-size: 1.5rem;
+  color: #2b2e2d;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
   transition: color 0.3s;
 }
+header .navbar .navbar-right ul li a.contact-link {
+  font-size: 1.6rem;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #2b2e2d;
+  color: #ffffff;
+  transition: background-color 0.3s, transform 0.3s;
+}
+header .navbar .navbar-right ul li a.contact-link:hover {
+  background-color: #444847;
+  transform: scale(1.05);
+}
 header .navbar .navbar-right ul li a:hover {
-  color: #2b2e2d;
+  color: #ffffff;
 }
 
 .hero {

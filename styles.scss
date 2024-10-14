@@ -4,7 +4,7 @@ $primary-color: #ffffff;
 $accent-color: #2b2e2d;
 $background-color: #2b2e2d;
 $font-family: 'Montserrat', sans-serif;
-$header-font: "Cinzel", serif;
+$header-font: 'Poppins', sans-serif;
 
 
 // Global Styles
@@ -22,60 +22,86 @@ body {
 
 // Header Styles
 header {
-    position: fixed; // Keeps the header fixed at the top
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 60px; // Adjust the height as needed
-    background-color: transparent; // Make background transparent
-    backdrop-filter: blur(10px); // Adjust the blur radius as needed
-    transition: backdrop-filter 0.3s ease; // Smooth transition for the blur effect
-    z-index: 1000; // Ensure header is on top of other elements
-
-    // Optional: Style for text in the header
-    h1, h2, h3, p {
-        color: #333; // Adjust text color for better visibility against the blurred background
-    }
-    
-    
+    height: 70px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    transition: backdrop-filter 0.3s ease;
+    z-index: 1000;
+    border-bottom: 2px solid $background-color;
 
     .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5px 20px; // Thinner navbar
+        padding: 5px 20px;
+        height: 100%;
 
-        .navbar-left h1 {
-            color: $primary-color; // Text color
-            font-family: $header-font; // Updated font for your name
-            font-size: 1.5rem; // Adjust font size for better visibility
-            font-weight: normal; // Set to regular font weight
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            h1 {
+                color: $background-color;
+                font-family: $header-font;
+                font-size: 2.0rem;
+                font-weight: 400;
+                font-style: normal;
+                line-height: 1.2;
+                margin: 0;
+                overflow: hidden;
+            }
         }
 
-        .navbar-right ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
+        .navbar-right {
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                height: 100%;
 
-            li {
-                margin: 0 15px;
+                li {
+                    margin: 0 15px;
 
-                a {
-                    text-decoration: none;
-                    color: $primary-color; // Link color
-                    font-family: "Cinzel", serif;
-                    font-size: 1.5rem; // Increased font size for links
-                    transition: color 0.3s;
+                    a {
+                        text-decoration: none;
+                        color: $background-color;
+                        font-family: $header-font;
+                        font-size: 1.6rem;
+                        transition: color 0.3s;
 
-                    &:hover {
-                        color: $accent-color; // Change color on hover
+                        &.contact-link {
+                            font-size: 1.6rem;
+                            padding: 10px 20px;
+                            border-radius: 25px;
+                            background-color: $accent-color;
+                            color: $primary-color;
+                            transition: background-color 0.3s, transform 0.3s;
+
+                            &:hover {
+                                background-color: lighten($accent-color, 10%);
+                                transform: scale(1.05);
+                            }
+                        }
+
+                        &:hover {
+                            color: $primary-color;
+                        }
                     }
                 }
             }
         }
     }
 }
+
+
+
 
 .hero {
     display: flex;
